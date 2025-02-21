@@ -1,0 +1,22 @@
+# Build directories
+bin/
+obj/
+.vs/
+.vscode/
+Debug/
+Release/
+
+# User-specific files
+*.user
+*.suo
+*.csproj.user
+
+# Configuration files
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+
+# Other
+*.log
+*.tmp
+*.cache
