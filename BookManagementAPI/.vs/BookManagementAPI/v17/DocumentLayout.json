@@ -1,0 +1,150 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\C# darslar\\Exadel\\BookManagementAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{38896A55-E478-46E3-824B-8153866A09D1}|BookManagementAPI.Api.csproj|d:\\c# darslar\\exadel\\bookmanagementapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38896A55-E478-46E3-824B-8153866A09D1}|BookManagementAPI.Api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E682EB30-5EE8-44F0-8CB1-3BCDE3B8F99C}|..\\BookManagementAPI.Infrastructure\\BookManagementAPI.Infrastructure.csproj|d:\\c# darslar\\exadel\\bookmanagementapi.infrastructure\\data\\bookcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E682EB30-5EE8-44F0-8CB1-3BCDE3B8F99C}|..\\BookManagementAPI.Infrastructure\\BookManagementAPI.Infrastructure.csproj|d:\\c# darslar\\exadel\\bookmanagementapi.infrastructure\\entities\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38896A55-E478-46E3-824B-8153866A09D1}|BookManagementAPI.Api.csproj|d:\\c# darslar\\exadel\\bookmanagementapi\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38896A55-E478-46E3-824B-8153866A09D1}|BookManagementAPI.Api.csproj|solutionrelative:controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E682EB30-5EE8-44F0-8CB1-3BCDE3B8F99C}|..\\BookManagementAPI.Infrastructure\\BookManagementAPI.Infrastructure.csproj|d:\\c# darslar\\exadel\\bookmanagementapi.infrastructure\\repositories\\ibookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E682EB30-5EE8-44F0-8CB1-3BCDE3B8F99C}|..\\BookManagementAPI.Infrastructure\\BookManagementAPI.Infrastructure.csproj|d:\\c# darslar\\exadel\\bookmanagementapi.infrastructure\\repositories\\bookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40418D54-C4BC-4892-AA2B-E8090C237642}|..\\BookManagementAPI.Core\\BookManagementAPI.Core.csproj|d:\\c# darslar\\exadel\\bookmanagementapi.core\\interfaces\\ibookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40418D54-C4BC-4892-AA2B-E8090C237642}|..\\BookManagementAPI.Core\\BookManagementAPI.Core.csproj|d:\\c# darslar\\exadel\\bookmanagementapi.core\\services\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BookService.cs",
+              "DocumentMoniker": "D:\\C# darslar\\Exadel\\BookManagementAPI.Core\\Services\\BookService.cs",
+              "RelativeDocumentMoniker": "..\\BookManagementAPI.Core\\Services\\BookService.cs",
+              "ToolTip": "D:\\C# darslar\\Exadel\\BookManagementAPI.Core\\Services\\BookService.cs",
+              "RelativeToolTip": "..\\BookManagementAPI.Core\\Services\\BookService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T17:47:10.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IBookService.cs",
+              "DocumentMoniker": "D:\\C# darslar\\Exadel\\BookManagementAPI.Core\\Interfaces\\IBookService.cs",
+              "RelativeDocumentMoniker": "..\\BookManagementAPI.Core\\Interfaces\\IBookService.cs",
+              "ToolTip": "D:\\C# darslar\\Exadel\\BookManagementAPI.Core\\Interfaces\\IBookService.cs",
+              "RelativeToolTip": "..\\BookManagementAPI.Core\\Interfaces\\IBookService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T17:40:34.636Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BookRepository.cs",
+              "DocumentMoniker": "D:\\C# darslar\\Exadel\\BookManagementAPI.Infrastructure\\Repositories\\BookRepository.cs",
+              "RelativeDocumentMoniker": "..\\BookManagementAPI.Infrastructure\\Repositories\\BookRepository.cs",
+              "ToolTip": "D:\\C# darslar\\Exadel\\BookManagementAPI.Infrastructure\\Repositories\\BookRepository.cs",
+              "RelativeToolTip": "..\\BookManagementAPI.Infrastructure\\Repositories\\BookRepository.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwCoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T17:36:32.862Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IBookRepository.cs",
+              "DocumentMoniker": "D:\\C# darslar\\Exadel\\BookManagementAPI.Infrastructure\\Repositories\\IBookRepository.cs",
+              "RelativeDocumentMoniker": "..\\BookManagementAPI.Infrastructure\\Repositories\\IBookRepository.cs",
+              "ToolTip": "D:\\C# darslar\\Exadel\\BookManagementAPI.Infrastructure\\Repositories\\IBookRepository.cs",
+              "RelativeToolTip": "..\\BookManagementAPI.Infrastructure\\Repositories\\IBookRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T17:36:00.299Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BookController.cs",
+              "DocumentMoniker": "D:\\C# darslar\\Exadel\\BookManagementAPI\\Controllers\\BookController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BookController.cs",
+              "ToolTip": "D:\\C# darslar\\Exadel\\BookManagementAPI\\Controllers\\BookController.cs",
+              "RelativeToolTip": "Controllers\\BookController.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAA/wEEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T08:21:11.757Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Book.cs",
+              "DocumentMoniker": "D:\\C# darslar\\Exadel\\BookManagementAPI.Infrastructure\\Entities\\Book.cs",
+              "RelativeDocumentMoniker": "..\\BookManagementAPI.Infrastructure\\Entities\\Book.cs",
+              "ToolTip": "D:\\C# darslar\\Exadel\\BookManagementAPI.Infrastructure\\Entities\\Book.cs",
+              "RelativeToolTip": "..\\BookManagementAPI.Infrastructure\\Entities\\Book.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T17:32:29.649Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BookContext.cs",
+              "DocumentMoniker": "D:\\C# darslar\\Exadel\\BookManagementAPI.Infrastructure\\Data\\BookContext.cs",
+              "RelativeDocumentMoniker": "..\\BookManagementAPI.Infrastructure\\Data\\BookContext.cs",
+              "ToolTip": "D:\\C# darslar\\Exadel\\BookManagementAPI.Infrastructure\\Data\\BookContext.cs",
+              "RelativeToolTip": "..\\BookManagementAPI.Infrastructure\\Data\\BookContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T17:36:44.721Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\C# darslar\\Exadel\\BookManagementAPI\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\C# darslar\\Exadel\\BookManagementAPI\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T16:16:03.014Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

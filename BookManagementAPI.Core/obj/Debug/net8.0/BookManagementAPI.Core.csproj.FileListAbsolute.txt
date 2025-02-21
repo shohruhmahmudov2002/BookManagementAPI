@@ -1,0 +1,15 @@
+D:\C# darslar\Exadel\BookManagementAPI.Core\bin\Debug\net8.0\BookManagementAPI.Core.deps.json
+D:\C# darslar\Exadel\BookManagementAPI.Core\bin\Debug\net8.0\BookManagementAPI.Core.dll
+D:\C# darslar\Exadel\BookManagementAPI.Core\bin\Debug\net8.0\BookManagementAPI.Core.pdb
+D:\C# darslar\Exadel\BookManagementAPI.Core\bin\Debug\net8.0\BookManagementAPI.Infrastructure.dll
+D:\C# darslar\Exadel\BookManagementAPI.Core\bin\Debug\net8.0\BookManagementAPI.Infrastructure.pdb
+D:\C# darslar\Exadel\BookManagementAPI.Core\obj\Debug\net8.0\BookManagementAPI.Core.csproj.AssemblyReference.cache
+D:\C# darslar\Exadel\BookManagementAPI.Core\obj\Debug\net8.0\BookManagementAPI.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\C# darslar\Exadel\BookManagementAPI.Core\obj\Debug\net8.0\BookManagementAPI.Core.AssemblyInfoInputs.cache
+D:\C# darslar\Exadel\BookManagementAPI.Core\obj\Debug\net8.0\BookManagementAPI.Core.AssemblyInfo.cs
+D:\C# darslar\Exadel\BookManagementAPI.Core\obj\Debug\net8.0\BookManagementAPI.Core.csproj.CoreCompileInputs.cache
+D:\C# darslar\Exadel\BookManagementAPI.Core\obj\Debug\net8.0\BookMana.815997C4.Up2Date
+D:\C# darslar\Exadel\BookManagementAPI.Core\obj\Debug\net8.0\BookManagementAPI.Core.dll
+D:\C# darslar\Exadel\BookManagementAPI.Core\obj\Debug\net8.0\refint\BookManagementAPI.Core.dll
+D:\C# darslar\Exadel\BookManagementAPI.Core\obj\Debug\net8.0\BookManagementAPI.Core.pdb
+D:\C# darslar\Exadel\BookManagementAPI.Core\obj\Debug\net8.0\ref\BookManagementAPI.Core.dll
