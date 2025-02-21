@@ -9,7 +9,7 @@ Book Management API is a RESTful web service built with **ASP.NET Core Web API**
 -  **CRUD Operations** (Create, Read, Update, Delete) for books
 -  **Soft Delete** (Marks books as deleted instead of removing them)
 -  **Restore Deleted Books**
--  **Get Popular Books** (Based on `ViewsCount` with pagination)
+-  **Get Popular Books** (Based on ViewsCount with pagination)
 -  **Bulk Add & Bulk Delete Support**
 -  **Pagination & Sorting**
 -  **Swagger API Documentation**
