@@ -1,20 +1,20 @@
-# 📚 Book Management API
+# Book Management API
 
-## 📖 Overview
+## Overview
 
 Book Management API is a RESTful web service built with **ASP.NET Core Web API** and **Entity Framework Core**, allowing users to manage books by adding, updating, deleting (soft delete), restoring, and retrieving books.
 
-## 🚀 Features
+## Features
 
-- ✅ **CRUD Operations** (Create, Read, Update, Delete) for books
-- ✅ **Soft Delete** (Marks books as deleted instead of removing them)
-- ✅ **Restore Deleted Books**
-- ✅ **Get Popular Books** (Based on `ViewsCount` with pagination)
-- ✅ **Bulk Add & Bulk Delete Support**
-- ✅ **Pagination & Sorting**
-- ✅ **Swagger API Documentation**
+-  **CRUD Operations** (Create, Read, Update, Delete) for books
+-  **Soft Delete** (Marks books as deleted instead of removing them)
+-  **Restore Deleted Books**
+-  **Get Popular Books** (Based on `ViewsCount` with pagination)
+-  **Bulk Add & Bulk Delete Support**
+-  **Pagination & Sorting**
+-  **Swagger API Documentation**
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - **C#**
 - **.NET 8 / ASP.NET Core Web API**
@@ -22,7 +22,7 @@ Book Management API is a RESTful web service built with **ASP.NET Core Web API**
 - **SQL Server**
 - **Swagger (Swashbuckle)**
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 BookManagementAPI/
@@ -33,16 +33,16 @@ BookManagementAPI/
 │── .gitignore                       # Git Ignore File
 ```
 
-## ⚙️ Setup & Installation
+## Setup & Installation
 
-### 1️⃣ Clone the Repository
+### Clone the Repository
 
 ```sh
 git clone https://github.com/yourusername/BookManagementAPI.git
 cd BookManagementAPI
 ```
 
-### 2️⃣ Configure Database Connection
+### Configure Database Connection
 
 Modify `appsettings.json` in **BookManagementAPI.Api**:
 
@@ -52,7 +52,7 @@ Modify `appsettings.json` in **BookManagementAPI.Api**:
 }
 ```
 
-### 3️⃣ Apply Migrations & Update Database
+### Apply Migrations & Update Database
 
 ```sh
 cd BookManagementAPI.Api
@@ -61,15 +61,15 @@ dotnet ef migrations add InitialCreate --project ../BookManagementAPI.Infrastruc
 dotnet ef database update --project ../BookManagementAPI.Infrastructure --startup-project .
 ```
 
-### 4️⃣ Run the Application
+### Run the Application
 
 ```sh
 dotnet run --project BookManagementAPI.Api
 ```
 
-## 📖 API Endpoints
+## API Endpoints
 
-### 📌 **Book Operations**
+### **Book Operations**
 
 | Method   | Endpoint                                      | Description                |
 | -------- | --------------------------------------------- | -------------------------- |
@@ -82,7 +82,7 @@ dotnet run --project BookManagementAPI.Api
 | `POST`   | `/api/books/delete-bulk`                      | Soft delete multiple books |
 | `POST`   | `/api/books/{id}/restore`                     | Restore a deleted book     |
 
-## 📝 API Documentation (Swagger)
+## API Documentation (Swagger)
 
 Once the application is running, open **Swagger UI** at:
 
@@ -90,9 +90,9 @@ Once the application is running, open **Swagger UI** at:
 http://localhost:5042/swagger/index.html
 ```
 
-## 🛠 Future Improvements
+## Future Improvements
 
-- 🔹 Implement Authentication & Authorization (JWT)
-- 🔹 Add Unit Tests & Integration Tests
-- 🔹 Implement User Roles (Admin, User)
+-  Implement Authentication & Authorization (JWT)
+-  Add Unit Tests & Integration Tests
+-  Implement User Roles (Admin, User)
 
