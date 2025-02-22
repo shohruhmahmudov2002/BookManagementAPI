@@ -1,40 +1,31 @@
 ﻿using BookManagementAPI.Core.DTOs;
 using BookManagementAPI.Core.Interfaces;
-using BookManagementAPI.Infrastructure.Data;
 using BookManagementAPI.Infrastructure.Entities;
-using Microsoft.EntityFrameworkCore;
+using BookManagementAPI.Infrastructure.Repositories;
 
 namespace BookManagementAPI.Core.Services;
 
 public class BookService : IBookService
 {
-    private readonly BookContext _context;
+    private readonly IBookRepository _bookRepository;
 
-    public BookService(BookContext context)
+    public BookService(IBookRepository bookRepository)
     {
-        _context = context;
+        _bookRepository = bookRepository;
     }
 
     public async Task<IEnumerable<string>> GetPopularBooks(int pageNumber, int pageSize)
     {
-        var titles = await _context.Books
-            .Where(b => !b.IsDeleted) 
-            .OrderByDescending(b => b.ViewsCount) 
-            .Skip((pageNumber - 1) * pageSize) 
-            .Take(pageSize)
-            .Select(b => b.Title)
-            .ToListAsync();
-
-        return titles;
+        return await _bookRepository.GetPopularBooks(pageNumber, pageSize);
     }
 
     public async Task<BookDto?> GetById(int id)
     {
-        var book = await _context.Books.Where(b => !b.IsDeleted).FirstOrDefaultAsync(b => b.Id == id);
-        if (book == null) return null;
-
-        book.ViewsCount += 1; 
-        await _context.SaveChangesAsync();
+        var book = await _bookRepository.GetByIdAsync(id);
+        if (book == null)
+        { 
+            return null; 
+        }
 
         return new BookDto
         {
@@ -48,8 +39,11 @@ public class BookService : IBookService
 
     public async Task<bool> AddSingle(BookCreateDto bookDto)
     {
-        var exists = await _context.Books.AnyAsync(b => b.Title == bookDto.Title);
-        if (exists) return false;
+        var exists = await _bookRepository.GetAllAsync();
+        if (exists.Any(b => b.Title == bookDto.Title)) 
+        { 
+            return false; 
+        }
 
         var book = new Book
         {
@@ -59,17 +53,19 @@ public class BookService : IBookService
             ViewsCount = 0
         };
 
-        await _context.Books.AddAsync(book);
-        await _context.SaveChangesAsync();
+        await _bookRepository.AddAsync(book);
         return true;
     }
 
     public async Task<(List<BookDto> addedBooks, List<string> skippedTitles)> AddBulk(List<BookCreateDto> bookDtos)
     {
-        var existingTitles = await _context.Books
-            .Where(b => bookDtos.Select(d => d.Title).Contains(b.Title))
-            .Select(b => b.Title)
-            .ToListAsync();
+        var existingBooks = await _bookRepository.GetAllAsync();
+        var existingTitles = existingBooks.Select(b => b.Title).ToHashSet();
+
+        var skippedTitles = bookDtos
+            .Where(dto => existingTitles.Contains(dto.Title))
+            .Select(dto => dto.Title)
+            .ToList();
 
         var newBooks = bookDtos
             .Where(dto => !existingTitles.Contains(dto.Title))
@@ -82,75 +78,76 @@ public class BookService : IBookService
             })
             .ToList();
 
-        List<BookDto> addedBookDtos = new();
-
         if (newBooks.Any())
         {
-            await _context.Books.AddRangeAsync(newBooks);
-            await _context.SaveChangesAsync();
-
-            addedBookDtos = newBooks.Select(b => new BookDto
-            {
-                Id = b.Id,
-                Title = b.Title,
-                Author = b.Author,
-                PublicationYear = b.PublicationYear,
-                ViewsCount = b.ViewsCount
-            }).ToList();
+            await _bookRepository.AddRangeAsync(newBooks);
         }
 
-        return (addedBookDtos, existingTitles);
+        var addedBooks = newBooks.Select(b => new BookDto
+        {
+            Id = b.Id,
+            Title = b.Title,
+            Author = b.Author,
+            PublicationYear = b.PublicationYear,
+            ViewsCount = b.ViewsCount
+        }).ToList();
+
+        return (addedBooks, skippedTitles);
+
     }
 
     public async Task<bool> Update(int id, BookUpdateDto bookDto)
     {
-        var book = await _context.Books.FindAsync(id);
-        if (book == null) return false;
+        var book = await _bookRepository.GetByIdAsync(id);
+        if (book == null) 
+        { 
+            return false; 
+        }
 
         book.Title = bookDto.Title;
         book.Author = bookDto.Author;
         book.PublicationYear = bookDto.PublicationYear;
 
-        _context.Books.Update(book);
-        await _context.SaveChangesAsync();
+        await _bookRepository.UpdateAsync(book);
         return true;
     }
 
     public async Task<bool> DeleteSingle(int id)
     {
-        var book = await _context.Books.FindAsync(id);
-        if (book == null) return false;
-
-        book.IsDeleted = true;
-        await _context.SaveChangesAsync();
-        return true;
+        return await _bookRepository.DeleteAsync(id);
     }
 
     public async Task<(List<int> deletedIds, List<int> notFoundIds)> DeleteBulk(List<int> bookIds)
     {
-        var books = await _context.Books
-            .Where(b => bookIds.Contains(b.Id) && !b.IsDeleted)
-            .ToListAsync();
+        var deletedIds = new List<int>();
+        var notFoundIds = new List<int>();
 
-        var foundIds = books.Select(b => b.Id).ToList();
-        var notFoundIds = bookIds.Except(foundIds).ToList();
-
-        if (foundIds.Any())
+        foreach(var id in bookIds)
         {
-            books.ForEach(b => b.IsDeleted = true);
-            await _context.SaveChangesAsync();
+            var success = await _bookRepository.DeleteAsync(id);
+            if(success)
+            {
+                deletedIds.Add(id);
+            }
+            else
+            {
+                notFoundIds.Add(id);
+            }
         }
 
-        return (foundIds, notFoundIds);
+        return (deletedIds, notFoundIds);
     }
 
     public async Task<bool> Restore(int id)
     {
-        var book = await _context.Books.FindAsync(id);
-        if (book == null || !book.IsDeleted) return false;
+        var book = await _bookRepository.GetByIdAsync(id);
+        if (book == null || !book.IsDeleted) 
+        { 
+            return false; 
+        }
 
         book.IsDeleted = false;
-        await _context.SaveChangesAsync();
+        await _bookRepository.UpdateAsync(book);
         return true;
     }
 }

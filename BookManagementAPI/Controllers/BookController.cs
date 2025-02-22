@@ -1,7 +1,9 @@
-﻿using BookManagementAPI.Core.DTOs;
-using BookManagementAPI.Infrastructure.Entities;
+﻿using BookManagementAPI.Api.Examples;
+using BookManagementAPI.Core.DTOs;
 using BookManagementAPI.Core.Interfaces;
+using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Filters;
 
 namespace BookManagementAPI.Controllers;
 
@@ -31,6 +33,7 @@ public class BooksController : ControllerBase
     }
 
     [HttpPost("add-single")]
+    [SwaggerRequestExample(typeof(BookCreateDto),typeof(CreateBookExample))]
     public async Task<IActionResult> AddBook([FromBody] BookCreateDto bookDto)
     {
         var success = await _bookService.AddSingle(bookDto);
@@ -38,6 +41,7 @@ public class BooksController : ControllerBase
     }
 
     [HttpPost("add-bulk")]
+    [SwaggerRequestExample(typeof(BookCreateDto), typeof(CreateBooksExample))]
     public async Task<IActionResult> AddBooks([FromBody] List<BookCreateDto> bookDtos)
     {
         var (addedBooks, skippedTitles) = await _bookService.AddBulk(bookDtos);
@@ -52,6 +56,7 @@ public class BooksController : ControllerBase
 
 
     [HttpPut("{id}")]
+    [SwaggerRequestExample(typeof(BookUpdateDto), typeof(UpdateBookExample))]
     public async Task<IActionResult> UpdateBook(int id, [FromBody] BookUpdateDto bookDto)
     {
         var success = await _bookService.Update(id, bookDto);
@@ -78,7 +83,7 @@ public class BooksController : ControllerBase
         });
     }
 
-    [HttpPost("{id}/restore")]
+    [HttpPut("{id}/restore")]
     public async Task<IActionResult> RestoreBook(int id)
     {
         var success = await _bookService.Restore(id);
