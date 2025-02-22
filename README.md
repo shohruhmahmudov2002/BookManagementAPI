@@ -26,9 +26,9 @@ Book Management API is a RESTful web service built with **ASP.NET Core Web API**
 
 ```
 BookManagementAPI/
-│── BookManagementAPI.Api/          # API Layer (Controllers)
+│── BookManagementAPI.Api/          # API Layer (Controllers, Examples)
 │── BookManagementAPI.Core/         # Business Logic Layer (Services, DTOs, Interfaces)
-│── BookManagementAPI.Infrastructure/ # Data Access Layer (DbContext, Entities, Repositories)
+│── BookManagementAPI.Infrastructure/ # Data Access Layer (DbContext, Entities, Repositories, Configuration)
 │── README.md                       # Documentation
 │── .gitignore                       # Git Ignore File
 ```
@@ -80,7 +80,7 @@ dotnet run --project BookManagementAPI.Api
 | `PUT`    | `/api/books/{id}`                             | Update a book              |
 | `DELETE` | `/api/books/{id}`                             | Soft delete a book         |
 | `POST`   | `/api/books/delete-bulk`                      | Soft delete multiple books |
-| `POST`   | `/api/books/{id}/restore`                     | Restore a deleted book     |
+| `PUT`   | `/api/books/{id}/restore`                     | Restore a deleted book     |
 
 ## API Documentation (Swagger)
 
